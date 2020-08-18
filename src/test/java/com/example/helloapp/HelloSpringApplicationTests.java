@@ -1,4 +1,4 @@
-package com.example.hellospring;
+package com.example.helloapp;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
