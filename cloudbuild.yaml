@@ -13,16 +13,16 @@ steps:
    - name: gcr.io/cloud-builders/docker
     args: ["push", "gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA"]
 
-   - name: gcr.io/cloud-builders/gcloud
-     id: Generate manifest
-     entrypoint: /bin/sh
-     args:
-      - '-c'
-      - |
-         sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" kubernetes.yaml.tpl | \
-         sed "s/COMMIT_SHA/${SHORT_SHA}/g" > kubernetes.yaml
+#  - name: gcr.io/cloud-builders/gcloud
+#    id: Generate manifest
+#     entrypoint: /bin/sh
+#     args:
+#      - '-c'
+#      - |
+#         sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" kubernetes.yaml.tpl | \
+#         sed "s/COMMIT_SHA/${SHORT_SHA}/g" > kubernetes.yaml
 
    # deploy container image to GKE
-   - name: "gcr.io/cloud-builders/gke-deploy"
-    args:["run","--filename=kubernetes.yaml","--image=gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA","--location=us-central1-c","--cluster=hello-cluster"]
+#   - name: "gcr.io/cloud-builders/gke-deploy"
+#    args:["run","--filename=kubernetes.yaml","--image=gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA","--location=us-central1-c","--cluster=hello-cluster"]
    
