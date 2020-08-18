@@ -12,7 +12,7 @@ steps:
 
    - name: gcr.io/cloud-builders/docker
     args: ["push", "gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA"]
-
+#
 #  - name: gcr.io/cloud-builders/gcloud
 #    id: Generate manifest
 #     entrypoint: /bin/sh
