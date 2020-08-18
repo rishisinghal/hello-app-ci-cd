@@ -15,8 +15,8 @@ steps:
 
   - name: gcr.io/cloud-builders/gcloud
     id: Generate manifest
-     entrypoint: /bin/sh
-     args:
+    entrypoint: /bin/sh
+    args:
       - '-c'
       - |
          sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" kubernetes.yaml.tpl | \
