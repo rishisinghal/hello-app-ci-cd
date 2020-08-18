@@ -24,4 +24,4 @@ steps:
 
    # deploy container image to GKE
   - name: "gcr.io/cloud-builders/gke-deploy"
-    args:["run","--filename=kubernetes.yaml","--image=gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA","--location=us-central1-c","--cluster=hello-cluster"]
+    args: ["run","--filename=kubernetes.yaml","--image=gcr.io/$PROJECT_ID/hello-app:$SHORT_SHA","--location=us-central1-c","--cluster=hello-cluster"]
